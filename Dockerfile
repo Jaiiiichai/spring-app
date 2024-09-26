@@ -11,11 +11,12 @@ RUN mvn clean package -DskipTests
 # Use OpenJDK for the runtime environment
 FROM openjdk:17.0.1-jdk-slim
 
-# Copy the built jar file from the build stage
-COPY --from=build /target/demo-0.0.1-SNAPSHOT.jar demo.jar
+# Copy the built jar file from the build stagemvn clean package -DskipTests
+
+COPY --from=build /target/testing-0.0.1-SNAPSHOT.jar testing.jar
 
 # Expose port 8080
 EXPOSE 8080
 
 # Run the application
-ENTRYPOINT ["java", "-jar", "demo.jar"]
+ENTRYPOINT ["java", "-jar", "testing.jar"]
