@@ -14,7 +14,7 @@ public class TestingApplication {
 	}
 	@GetMapping("/hello")
 	public String hello() {
-		return "Hello, World!niggas";
+		return "Hello, World!";
 	}
 
 }
